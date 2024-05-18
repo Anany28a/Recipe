@@ -50,7 +50,6 @@ const fetchIngredients = (meal) => {
     }
     return ingredientList;
 };
-
 const openRecipePopup = (meal) => {
     recipeDetailsContent.innerHTML = `
         <h2 class="recipeName">${meal.strMeal}</h2>
@@ -79,3 +78,32 @@ searchBtn.addEventListener("click", (e) => {
     }
     fetchRecipe(searchInput);
 });
+
+// const openRecipePopup = (meal) => {
+//     recipeDetailsContent.innerHTML = `
+//         <h2 class="recipeName">${meal.strMeal}</h2>
+//         <h3 class="ingredientList">Ingredients:</h3>
+//         <ul>${fetchIngredients(meal)}</ul>
+//         <div class="recipeInstruction">
+//             <h3>Instruction:</h3>
+//             <p>${meal.strInstructions}</p> <!-- Corrected property name -->
+//         </div>
+//     `;
+//     recipeDetailsContent.parentElement.style.display = "block";
+// };
+
+// // For closing
+// recipeCloseBtn.addEventListener("click", () => {
+//     recipeDetailsContent.parentElement.style.display = "none"; // To not show details
+// });
+
+// // For searching
+// searchBtn.addEventListener("click", (e) => {
+//     e.preventDefault(); // Prevent auto submit
+//     const searchInput = searchBox.value.trim();
+//     if (!searchInput) {
+//         recipeContainer.innerHTML = `<h2>Type the recipe in the search box!!!!</h2>`;
+//         return;
+//     }
+//     fetchRecipe(searchInput);
+// });
